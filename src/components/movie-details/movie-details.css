@@ -1,0 +1,30 @@
+#coverUrl{
+    width: 400px;
+    border-radius: 20px
+}
+#movieTitle{
+    text-align: center;
+    padding-top: 5%
+};
+html{
+    padding-left: 5%
+}
+p{
+    font-size: 20px;
+}
+#genre{
+    text-align: end;
+}
+#time{
+    text-align: center;
+}
+#year{
+    text-align: start;
+}
+iframe{
+    height: 480px;
+    width: 720px ;
+}
+.video{
+    margin-top:  5%;
+}

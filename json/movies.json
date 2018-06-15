@@ -1,0 +1,15 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "dvdNumber": 12,
+      "genre": "Drama",
+      "year": 12312,
+      "time": 12312,
+      "movieTitle": "edites",
+      "cast": "123",
+      "coverUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgTDOzadSH7HZlU96Ogy2XzMynwk4o4Epcvw12FmpBYRT0B_aLrA",
+      "trailerUrl": "https://www.youtube.com/embed/MYm5iaOy6Ik"
+    }
+  ]
+}
