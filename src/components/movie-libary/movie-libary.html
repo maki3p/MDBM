@@ -10,7 +10,7 @@
     </thead>
     <tr *ngFor="let m of movieList">
         <td>{{m.dvdNumber}}</td>
-        <td (click)="navigateToDetails(m.id)">{{m.movieTitle}}</td>
+        <td (click)="navigateToDetails(m.id)">{{ (m.movieTitle.length>25)? (m.movieTitle | slice:0:25)+'...':(m.movieTitle) }}</td>
         <td>{{m.genre}}</td>
         <td>{{m.year}}</td>
         <td>{{m.time}}</td>
