@@ -3,3 +3,6 @@ footer {
     font-family: 'Times New Roman', Times, serif;
     padding-top: 7%;
       }
+.nav-link{
+  cursor: pointer;
+}

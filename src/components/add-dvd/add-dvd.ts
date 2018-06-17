@@ -70,7 +70,7 @@ export class AddDvdComponent {
         if (this.movie.id) {
             this.movieService.update(this.movie).subscribe(data => {
                 if (data) {
-                    this.router.navigate(["add-dvd"]);
+                    this.router.navigate(["movie-libary"]);
                 } else {
                     alert("something went wrong");
                 }
