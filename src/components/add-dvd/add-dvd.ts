@@ -1,13 +1,16 @@
-import { Component, Input, OnInit, ViewChild } from "@angular/core"
+import { Component, Input, OnInit, ViewChild} from "@angular/core"
 import { Router, ActivatedRoute } from "@angular/router"
 import { NgForm, FormGroup, FormControl, FormBuilder, Validators } from "@angular/forms";
 import { MovieService } from "../../services/movie.service";
 import { Movie } from "../../models/movie";
-import { DomSanitizer } from "@angular/platform-browser"
+import { DomSanitizer } from "@angular/platform-browser";
+
 @Component({
     selector: "add-dvd",
     templateUrl: "./add-dvd.html",
-    styleUrls: ['./add-dvd.css']
+    styleUrls: ['./add-dvd.css'],
+    
+    
 })
 
 
@@ -63,7 +66,7 @@ export class AddDvdComponent {
         this.movie.time = this.movieForm.value["time"];
         this.movie.year = this.movieForm.value["year"];
         this.movie.coverUrl = this.movieForm.value["coverUrl"];
-        this.movie.trailerUrl = this.movieForm.value["trailerUrl"];
+        this.movie.trailerUrl = this.movieForm.value["trailerUrl"].replace("watch?v=","embed/");
         this.movie.id = this.movieForm.value["id"]
         console.log(this.movie);
 

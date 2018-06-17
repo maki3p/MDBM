@@ -43,7 +43,7 @@ export class MovieDetailsComoponent implements OnInit {
             this.year = data.year;
             this.trailerUrl = data.trailerUrl;
             this.genre = data.genre;
-            this.trustedDashboardUrl = this.sanitizer.bypassSecurityTrustResourceUrl(data.trailerUrl)
+            this.trustedDashboardUrl = this.sanitizer.bypassSecurityTrustResourceUrl(data.trailerUrl.replace("watch?v=","embed/"))
         });   
     }
    
