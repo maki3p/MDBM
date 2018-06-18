@@ -28,11 +28,13 @@
                       <h4>Are you sure to delete this movie {{m.movieTitle}}</h4>
                     </div>
                     <div class="modal-footer">
-                      <input type="button" value="Delete" class="btn btn-outline-danger" (click)="deleteMovie(m.id)" (click)="c('Close click')">
+                      <input type="button" value="Delete" class="btn btn-outline-danger" (click)="deleteMovie(m.id)" (click)="c('Close click')" (click)="changeSuccessMessage()">
                       <button type="button" class="btn btn-outline-primary" (click)="c('Close click')">Close</button>
                     </div>
                   </ng-template>
         </td>
     </tr>
-</table>
+   
 
+</table>
+<ngb-alert *ngIf="successMessage" type="danger" class="text-center"  >{{ successMessage }}</ngb-alert>

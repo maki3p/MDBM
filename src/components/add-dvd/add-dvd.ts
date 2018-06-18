@@ -1,25 +1,25 @@
-import { Component, Input, OnInit, ViewChild} from "@angular/core"
+import { Component, Input, OnInit, ViewChild } from "@angular/core"
 import { Router, ActivatedRoute } from "@angular/router"
 import { NgForm, FormGroup, FormControl, FormBuilder, Validators } from "@angular/forms";
 import { MovieService } from "../../services/movie.service";
 import { Movie } from "../../models/movie";
-import {Subject} from 'rxjs';
+import { Subject } from 'rxjs';
 import { DomSanitizer } from "@angular/platform-browser";
-import {debounceTime} from 'rxjs/operators';
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
     selector: "add-dvd",
     templateUrl: "./add-dvd.html",
     styleUrls: ['./add-dvd.css'],
-    
-    
+
+
 })
 
 
 export class AddDvdComponent implements OnInit {
 
     private _success = new Subject<string>();
-    
+
     staticAlertClosed = false;
     successMessage: string;
 
@@ -28,17 +28,17 @@ export class AddDvdComponent implements OnInit {
         private router: Router,
         private activatedRoute: ActivatedRoute,
         private sanitizer: DomSanitizer) {
-           
+
     }
-    
-    
+
+
     ngOnInit() {
         setTimeout(() => this.staticAlertClosed = true, 20000);
 
-    this._success.subscribe((message) => this.successMessage = message);
-    this._success.pipe(
-      debounceTime(5000)
-    ).subscribe(() => this.successMessage = null);
+        this._success.subscribe((message) => this.successMessage = message);
+        this._success.pipe(
+            debounceTime(5000)
+        ).subscribe(() => this.successMessage = null);
 
         let id = this.activatedRoute.snapshot.params["id"];
         if (id) {
@@ -55,9 +55,9 @@ export class AddDvdComponent implements OnInit {
         } else {
             this.movie = Movie.empty();
         }
-      
+
     }
-    
+
     movieForm: FormGroup = this.fb.group({
         movieTitle: ["", [Validators.required]],
         dvdNumber: ["", [Validators.required]],
@@ -70,7 +70,7 @@ export class AddDvdComponent implements OnInit {
         id: [""]
     });
 
-    
+
     createMovie(e): void {
 
         this.movie.movieTitle = this.movieForm.value["movieTitle"];
@@ -80,13 +80,13 @@ export class AddDvdComponent implements OnInit {
         this.movie.time = this.movieForm.value["time"];
         this.movie.year = this.movieForm.value["year"];
         this.movie.coverUrl = this.movieForm.value["coverUrl"];
-        this.movie.trailerUrl = this.movieForm.value["trailerUrl"].replace("watch?v=","embed/");
+        this.movie.trailerUrl = this.movieForm.value["trailerUrl"].replace("watch?v=", "embed/");
         this.movie.id = this.movieForm.value["id"]
 
         if (this.movie.id) {
             this.movieService.update(this.movie).subscribe(data => {
                 if (data) {
-                   
+
                 } else {
                     alert("something went wrong");
                 }
@@ -94,7 +94,7 @@ export class AddDvdComponent implements OnInit {
         } else {
             this.movieService.create(this.movie).subscribe(data => {
                 if (data) {
-                    this.router.navigate(["movie-libary"]);                           
+                    this.router.navigate(["movie-libary"]);
                 } else {
                     alert("something went wrong");
                 }
@@ -104,8 +104,9 @@ export class AddDvdComponent implements OnInit {
 
     @Input() movie: Movie = Movie.empty();
 
-     changeSuccessMessage() {``
-    this._success.next(this.movie.movieTitle + " " + `successfully changed.`);
-    console.log("run")
-  }
+    public changeSuccessMessage() {
+        
+        this._success.next(this.movie.movieTitle + " " + `successfully changed.`);
+        console.log("run")
+    }
 }
