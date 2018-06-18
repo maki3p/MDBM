@@ -1,31 +1,36 @@
 #coverUrl{
-    width: 450px;
-    height: 330px;
+    min-width: 300px;
+    min-height: 450px;
+   max-width: 450px;
+    max-height: 450px;
     border-radius: 20px
 }
-#movieTitle{
+/* #movieTitle{
     text-align: center;
     padding-top: 5%
-};
-html{
-    padding-left: 5%
-}
+}; */
+
 p{
     font-size: 20px;
+    text-align: left;
 }
 #genre{
-    text-align: end;
+    text-align: right;
 }
 #time{
-    text-align: center;
+    text-align: left;
 }
-#year{
+/* #year{
     text-align: start;
-}
+} */
 iframe{
     height: 480px;
     width: 720px ;
+    margin-top: 3%;
 }
 .video{
     margin-top:  5%;
+}
+.container{
+    margin-top: 5%;
 }

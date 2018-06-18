@@ -8,3 +8,6 @@ th{
 h1{
     text-align: center;
 }
+#movieTitle{
+    cursor: pointer;
+}

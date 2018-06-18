@@ -5,6 +5,7 @@ import { MovieService } from "../../services/movie.service";
 import { Movie } from "../../models/movie";
 import { DomSanitizer } from "@angular/platform-browser";
 
+
 @Component({
     selector: "add-dvd",
     templateUrl: "./add-dvd.html",

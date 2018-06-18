@@ -1,13 +1,15 @@
-import { Component, OnInit, ViewChild, Input } from "@angular/core";
+import { Component, OnInit, ViewChild, Input,Inject } from "@angular/core";
 import { Movie } from "../../models/movie";
 import { Router, ActivatedRoute } from "@angular/router";
-import { MovieService } from "../../services/movie.service"
-import { AddDvdComponent } from "../add-dvd"
+import { MovieService } from "../../services/movie.service";
+import { MatDialogRef } from '@angular/material';
+
 @Component({
     selector: "movie-libary",
     templateUrl: "./movie-libary.html",
     styleUrls: ["./movie-libary.css"]
 })
+
 
 
 export class MovieLibaryComponent implements OnInit {

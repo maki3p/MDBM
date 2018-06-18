@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <div class="row">
         <div class="col-md-12">
             <h1 id="movieTitle">{{movieTitle}}</h1>
@@ -19,7 +19,7 @@
         <br>
         <div class="row">
             <div class="col-md-5">
-                <img src="{{coverUrl}}" alt="{{movieTitle}}-cover" id="coverUrl" class="img-thumbnail"  onError="this.src='https://pm-ka.com/wp-content/uploads/2017/10/error-404-1.png';" >
+                <img src="{{coverUrl}}" alt="{{movieTitle}}-cover" id="coverUrl"   onError="this.src='http://www.buyfactorydirectspacovers.com/image/not-found.png';" >
 
             </div>
 
@@ -43,8 +43,56 @@
         </div>
 
     </div>
+</div> -->
+<!-- <div class="container-fluid">
+    <div class="col-md-12 text-center">
+            <h1 id="movieTitle">{{movieTitle}}</h1><h6>DVD Number: {{dvdNumber}}</h6>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+                <h5 id="genre">Genre: {{genre}}</h5>
+        </div>
+        <div class="col-md-4 text-center">
+                <h5 id="year">Release year: {{year}}</h5>
+        </div>
+        <div class="col-md-4">
+                <h5 id="time">Time: {{time}} min.</h5>
+        </div>
+    </div>
 
-
-
+</div> -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 text-center">
+            <img src="{{coverUrl}}" alt="{{movieTitle}}-cover" id="coverUrl" onError="this.src='http://www.buyfactorydirectspacovers.com/image/not-found.png';">
+        </div>
+        <div class="col-md-6 text-center">
+            <div class="col-md-12">
+                <h1 id="movieTitle">{{movieTitle}}</h1>
+            </div>
+            <div class="col-md-12 text-center">
+                <h5>DVD Number: {{dvdNumber}}</h5>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h5 id="genre">Genre: {{genre}}</h5>
+                </div>
+                <div class="col-md-4 text-center">
+                    <h5 id="year">Release year: {{year}}</h5>
+                </div>
+                <div class="col-md-4">
+                    <h5 id="time">Time: {{time}} min.</h5>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <p>
+                    Cast: {{cast | uppercase}}
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 text-center">
+            <iframe [src]="trustedDashboardUrl" frameborder="1"></iframe>
+    </div>
 
 </div>
