@@ -3,8 +3,9 @@ import { Router, ActivatedRoute } from "@angular/router"
 import { NgForm, FormGroup, FormControl, FormBuilder, Validators } from "@angular/forms";
 import { MovieService } from "../../services/movie.service";
 import { Movie } from "../../models/movie";
+import {Subject} from 'rxjs';
 import { DomSanitizer } from "@angular/platform-browser";
-
+import {debounceTime} from 'rxjs/operators';
 
 @Component({
     selector: "add-dvd",
@@ -15,8 +16,12 @@ import { DomSanitizer } from "@angular/platform-browser";
 })
 
 
-export class AddDvdComponent {
+export class AddDvdComponent implements OnInit {
 
+    private _success = new Subject<string>();
+    
+    staticAlertClosed = false;
+    successMessage: string;
 
     constructor(private fb: FormBuilder,
         private movieService: MovieService,
@@ -25,8 +30,16 @@ export class AddDvdComponent {
         private sanitizer: DomSanitizer) {
            
     }
-
+    
+    
     ngOnInit() {
+        setTimeout(() => this.staticAlertClosed = true, 20000);
+
+    this._success.subscribe((message) => this.successMessage = message);
+    this._success.pipe(
+      debounceTime(5000)
+    ).subscribe(() => this.successMessage = null);
+
         let id = this.activatedRoute.snapshot.params["id"];
         if (id) {
             this.movieService.get(id).subscribe(data => {
@@ -42,7 +55,7 @@ export class AddDvdComponent {
         } else {
             this.movie = Movie.empty();
         }
-
+      
     }
     
     movieForm: FormGroup = this.fb.group({
@@ -69,12 +82,11 @@ export class AddDvdComponent {
         this.movie.coverUrl = this.movieForm.value["coverUrl"];
         this.movie.trailerUrl = this.movieForm.value["trailerUrl"].replace("watch?v=","embed/");
         this.movie.id = this.movieForm.value["id"]
-        console.log(this.movie);
 
         if (this.movie.id) {
             this.movieService.update(this.movie).subscribe(data => {
                 if (data) {
-                    this.router.navigate(["movie-libary"]);
+                   
                 } else {
                     alert("something went wrong");
                 }
@@ -82,15 +94,18 @@ export class AddDvdComponent {
         } else {
             this.movieService.create(this.movie).subscribe(data => {
                 if (data) {
-                    this.router.navigate(["movie-libary"]);
+                    this.router.navigate(["movie-libary"]);                           
                 } else {
                     alert("something went wrong");
                 }
             });
         };
     };
-    
 
     @Input() movie: Movie = Movie.empty();
 
+     changeSuccessMessage() {``
+    this._success.next(this.movie.movieTitle + " " + `successfully changed.`);
+    console.log("run")
+  }
 }

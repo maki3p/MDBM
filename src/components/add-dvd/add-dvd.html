@@ -1,4 +1,4 @@
-<h1 id="addMovie">Add Movie</h1>
+<h1 id="addMovie">New Movie</h1>
 <form   [formGroup]="movieForm" (ngSubmit)="createMovie($event)" novalidate >
     <div class="container">
         <div class="row">
@@ -14,7 +14,7 @@
                 <div class="form-group">
                     
                     <select class="form-control" formControlName="genre" >
-                        <option disabled ng-selected="Select Genre">
+                        <option disabled selected value="Select">
                             Select Genre
                         </option>>
                         <option value="Thriller">Thriller</option>
@@ -82,9 +82,9 @@
             </div>
         </div>
         <br>
-        <input  [disabled]="!movieForm.valid"  type="submit" value="Save" class="btn btn-outline-primary btn-block">
+        <input  [disabled]="!movieForm.valid"  type="submit" value="Save" (click)="changeSuccessMessage()" class="btn btn-outline-primary btn-block">
     </div>
    
 
 </form>
-
+<ngb-alert *ngIf="successMessage" type="success"  target="_blank" >{{ successMessage }}</ngb-alert>

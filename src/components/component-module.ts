@@ -7,8 +7,7 @@ import { MovieService } from "../services/movie.service";
 import {MovieLibaryComponent } from "./movie-libary";
 import { MovieDetailsComoponent} from "./movie-details";
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
-
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -17,6 +16,7 @@ import {MatButtonModule, MatCheckboxModule} from '@angular/material';
   MovieLibaryComponent,
   MovieDetailsComoponent,
 
+
   ],
   imports: [
     CommonModule,
@@ -24,8 +24,7 @@ import {MatButtonModule, MatCheckboxModule} from '@angular/material';
     FormsModule,
     MatButtonModule,
     MatCheckboxModule,
-    
-    
+    NgbModule.forRoot()
     
   ],
   exports: [

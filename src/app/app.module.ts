@@ -8,10 +8,13 @@ import { MovieService } from "../services/movie.service";
 import { RouterModule } from "@angular/router";
 import { AppRoutingModule } from "../routes/routes-module";
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   declarations: [
     AppComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -21,7 +24,8 @@ import {MatButtonModule, MatCheckboxModule} from '@angular/material';
     HttpModule,
     AppRoutingModule,
     MatButtonModule, 
-    MatCheckboxModule
+    MatCheckboxModule,
+    NgbModule.forRoot()
     
   ],
   providers: [
