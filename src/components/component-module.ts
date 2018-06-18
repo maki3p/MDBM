@@ -9,12 +9,15 @@ import { MovieDetailsComoponent} from "./movie-details";
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+
+
 @NgModule({
   declarations: [
   AddDvdComponent,
   WelcomeComponent,
   MovieLibaryComponent,
   MovieDetailsComoponent,
+  
 
 
   ],
@@ -24,7 +27,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     MatButtonModule,
     MatCheckboxModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
     
   ],
   exports: [

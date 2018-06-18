@@ -16,7 +16,23 @@
         <td>{{m.time}}</td>
         <td>
             <input type="button" value="Edit" class="btn btn-outline-info" (click)="navigateToEdit(m.id)">
-            <input type="button" value="Delete" class="btn btn-outline-danger" (click)="deleteMovie(m.id)">
+            <input type="button" value="Delete" class="btn btn-outline-danger" (click)="openSm(content)">    
+            <ng-template #content let-c="close" let-d="dismiss">
+                    <div class="modal-header">
+                      <h4 class="modal-title">Delete Confirmation</h4>
+                      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <h4>Are you sure to delete this movie {{m.movieTitle}}</h4>
+                    </div>
+                    <div class="modal-footer">
+                      <input type="button" value="Delete" class="btn btn-outline-danger" (click)="deleteMovie(m.id)" (click)="c('Close click')">
+                      <button type="button" class="btn btn-outline-primary" (click)="c('Close click')">Close</button>
+                    </div>
+                  </ng-template>
         </td>
     </tr>
 </table>
+

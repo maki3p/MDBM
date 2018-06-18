@@ -10,50 +10,6 @@
       "cast": "123",
       "coverUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgTDOzadSH7HZlU96Ogy2XzMynwk4o4Epcvw12FmpBYRT0B_aLrA",
       "trailerUrl": "https://www.youtube.com/embed/MYm5iaOy6Ik"
-    },
-    {
-      "id": 2,
-      "dvdNumber": 12,
-      "genre": "Comedy",
-      "year": 1595,
-      "time": 616,
-      "movieTitle": "Batman 2",
-      "cast": "afkaso",
-      "coverUrl": "aslfklafa ",
-      "trailerUrl": "https://www.youtube.com/embed/JNYOVEXJBBM"
-    },
-    {
-      "id": 3,
-      "dvdNumber": 22,
-      "genre": "Comedy",
-      "year": 1996,
-      "time": 150,
-      "movieTitle": "Tomb Raider 3",
-      "cast": "angelina jolie, tom cruze, bred pitt",
-      "coverUrl": "https://m.media-amazon.com/images/M/MV5BNWYyNDIxNDYtYTkxMi00ZGI3LWJmZmEtOGU3YTQ2MjVmYTAyXkEyXkFqcGdeQXVyNTk5ODgwNTE@._V1_UX182_CR0,0,182,268_AL_.jpg",
-      "trailerUrl": "https://www.youtube.com/embed/xBIQxDA6cPo"
-    },
-    {
-      "id": 5,
-      "dvdNumber": 22,
-      "genre": "Musical",
-      "year": 2015,
-      "time": 214,
-      "movieTitle": "Anacondas: The Hunt for the Blood Orchid 2",
-      "cast": "asfasfa",
-      "coverUrl": "https://m.media-amazon.com/images/M/MV5BNGU4MThiYjItMDliMC00YWM4LTljZTEtNTg0YzdiMmE2MjM4XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX663_CR0,0,663,999_AL_.jpg",
-      "trailerUrl": "https://www.youtube.com/embed/yKPSBbufbME"
-    },
-    {
-      "id": 6,
-      "dvdNumber": 143,
-      "genre": "Horror",
-      "year": 2015,
-      "time": 102,
-      "movieTitle": "Test Message2",
-      "cast": "Glumcu pasf asfposka paoKSF psaok pkaskFP Oaspofk pkoasf aspofapoksf pasasaskpf ",
-      "coverUrl": "",
-      "trailerUrl": "https://www.youtube.com/embed/JNYOVEXJBBM"
     }
   ]
 }

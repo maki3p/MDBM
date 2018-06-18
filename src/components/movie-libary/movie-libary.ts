@@ -1,12 +1,13 @@
-import { Component, OnInit, ViewChild, Input,Inject } from "@angular/core";
+import { Component, OnInit, ViewChild, Input,Inject,ViewEncapsulation } from "@angular/core";
 import { Movie } from "../../models/movie";
 import { Router, ActivatedRoute } from "@angular/router";
 import { MovieService } from "../../services/movie.service";
-import { MatDialogRef } from '@angular/material';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
     selector: "movie-libary",
     templateUrl: "./movie-libary.html",
+    encapsulation: ViewEncapsulation.None,
     styleUrls: ["./movie-libary.css"]
 })
 
@@ -15,6 +16,7 @@ import { MatDialogRef } from '@angular/material';
 export class MovieLibaryComponent implements OnInit {
     movieList: Movie[];
     movie: Movie
+    closeResult: string;
     navigateToEdit(id: string) {
         this.router.navigate(["add-dvd", id]);
     }
@@ -27,21 +29,29 @@ export class MovieLibaryComponent implements OnInit {
     constructor(
         private activatedRoute: ActivatedRoute,
         private router: Router,
-        private movieService: MovieService) {
+        private movieService: MovieService,
+        private modalService: NgbModal) {
 
     }
-
+    openSm(content) {
+        this.modalService.open(content, { size: 'lg' });
+        
+      }
+    
     ngOnInit() {
         this.movieService.getAll().subscribe(data => {
             this.movieList = data
         });
 
     }
-    deleteMovie(id) {
+    public deleteMovie(id) {
         this.movieService.deleteMovie(id)
             .subscribe(data => {
                 alert("Movie is Deleted")
-                this.router.navigate(["add-dvd"]) 
+                this.movieService.getAll().subscribe(data => {
+                    this.movieList = data
+                });
+                
             })     
     }
 };
