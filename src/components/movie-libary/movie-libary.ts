@@ -5,6 +5,7 @@ import { MovieService } from "../../services/movie.service";
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { debounceTime } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+import { StaticInjector } from "@angular/core/src/di/injector";
 
 
 @Component({
@@ -23,6 +24,7 @@ export class MovieLibaryComponent implements OnInit {
     private _success = new Subject<string>();
     staticAlertClosed = false;
     successMessage: string;
+   
 
     navigateToEdit(id: string) {
         this.router.navigate(["add-dvd", id]);
@@ -57,9 +59,9 @@ export class MovieLibaryComponent implements OnInit {
         this._success.pipe(
             debounceTime(5000)
         ).subscribe(() => this.successMessage = null);
+
     }
-
-
+    
      deleteMovie(id) {
         this.movieService.deleteMovie(id)
             .subscribe(data => {
@@ -73,6 +75,8 @@ export class MovieLibaryComponent implements OnInit {
         
         this._success.next(`The Movie is DELETED.`);
     }
+    
 };
+
 
 

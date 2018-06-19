@@ -1,4 +1,6 @@
+<div *ngIf="movieList">
 <h1>Movie Libary</h1>
+    <h5 class="text-center">Total Movies in Libary : {{movieList.length}}</h5>
 <table class="table table-striped">
     <thead>
         <th>#Dvd</th>
@@ -34,7 +36,6 @@
                   </ng-template>
         </td>
     </tr>
-   
-
 </table>
+</div>
 <ngb-alert *ngIf="successMessage" type="danger" class="text-center"  >{{ successMessage }}</ngb-alert>
