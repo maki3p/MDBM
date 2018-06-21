@@ -1,4 +1,13 @@
+<form>
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div>
+            <input type="text" class="form-control" name="searchString" placeholder="Type to search..." [(ngModel)]="filter">
+        </div>
+    </div>
+</form>
 <div *ngIf="movieList">
+   
 <h1>Movie Libary</h1>
     <h5 class="text-center">Total Movies in Libary : {{movieList.length}}</h5>
 <table class="table table-striped">
@@ -10,7 +19,7 @@
         <th>Time</th>
         <th></th>
     </thead>
-    <tr *ngFor="let m of movieList">
+    <tr *ngFor="let m of movieList | filter:filter; let i = index">
         <td>{{m.dvdNumber}}</td>
         <td (click)="navigateToDetails(m.id)" id="movieTitle">{{ (m.movieTitle.length>25)? (m.movieTitle | slice:0:25)+'...':(m.movieTitle) }}</td>
         <td>{{m.genre}}</td>

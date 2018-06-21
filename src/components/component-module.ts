@@ -8,7 +8,7 @@ import {MovieLibaryComponent } from "./movie-libary";
 import { MovieDetailsComoponent} from "./movie-details";
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 @NgModule({
@@ -28,10 +28,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatButtonModule,
     MatCheckboxModule,
     NgbModule.forRoot(),
+    Ng2SearchPipeModule
     
   ],
   exports: [
     AddDvdComponent,
+    
   ],
   providers: [MovieService],
 

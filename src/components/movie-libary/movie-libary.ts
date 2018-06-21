@@ -1,12 +1,10 @@
-import { Component, OnInit, ViewChild, Input, Inject, ViewEncapsulation } from "@angular/core";
+import { Component, OnInit, ViewChild, Input, Inject, ViewEncapsulation, EventEmitter } from "@angular/core";
 import { Movie } from "../../models/movie";
 import { Router, ActivatedRoute } from "@angular/router";
 import { MovieService } from "../../services/movie.service";
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { debounceTime } from 'rxjs/operators';
 import { Subject } from 'rxjs';
-import { StaticInjector } from "@angular/core/src/di/injector";
-
 
 @Component({
     selector: "movie-libary",
@@ -24,7 +22,7 @@ export class MovieLibaryComponent implements OnInit {
     private _success = new Subject<string>();
     staticAlertClosed = false;
     successMessage: string;
-   
+    public searchString: string;
 
     navigateToEdit(id: string) {
         this.router.navigate(["add-dvd", id]);
@@ -75,7 +73,8 @@ export class MovieLibaryComponent implements OnInit {
         
         this._success.next(`The Movie is DELETED.`);
     }
-    
+
+   
 };
 
 

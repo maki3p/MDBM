@@ -9,12 +9,13 @@ import { RouterModule } from "@angular/router";
 import { AppRoutingModule } from "../routes/routes-module";
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DeprecatedI18NPipesModule } from '@angular/common';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    
   ],
   imports: [
     BrowserModule,
@@ -25,11 +26,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     MatButtonModule, 
     MatCheckboxModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    DeprecatedI18NPipesModule,
     
   ],
   providers: [
-    MovieService
+    MovieService,
   ],
   bootstrap: [AppComponent],
   
