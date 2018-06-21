@@ -74,7 +74,14 @@ export class MovieLibaryComponent implements OnInit {
         this._success.next(`The Movie is DELETED.`);
     }
 
-   
+    key: string = 'movieTitle'; //set default
+    reverse: boolean = false;
+    sort(key){
+      this.key = key;
+      this.reverse = !this.reverse;
+    }
+
+    p: number = 1;
 };
 
 

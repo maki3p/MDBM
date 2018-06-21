@@ -9,6 +9,8 @@ import { MovieDetailsComoponent} from "./movie-details";
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { Ng2OrderModule } from 'ng2-order-pipe'; //importing the module
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     MatButtonModule,
     MatCheckboxModule,
     NgbModule.forRoot(),
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    Ng2OrderModule,
+    NgxPaginationModule
     
   ],
   exports: [

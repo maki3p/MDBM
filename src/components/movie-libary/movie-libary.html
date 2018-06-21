@@ -12,16 +12,16 @@
     <h5 class="text-center">Total Movies in Libary : {{movieList.length}}</h5>
 <table class="table table-striped">
     <thead>
-        <th>#Dvd</th>
-        <th>Movie Title</th>
-        <th>Genre</th>
-        <th>Year</th>
-        <th>Time</th>
+        <th (click)="sort('dvdNumber')">#Dvd</th>
+        <th (click)="sort('movieTitle')">Movie Title </th>
+        <th (click)="sort('genre')">Genre</th>
+        <th (click)="sort('year')">Year</th>
+        <th (click)="sort('time')">Time</th>
         <th></th>
     </thead>
-    <tr *ngFor="let m of movieList | filter:filter; let i = index">
+    <tr *ngFor="let m of movieList | orderBy: key : reverse | filter:filter | paginate: { itemsPerPage: 10, currentPage: p }; let i = index ">
         <td>{{m.dvdNumber}}</td>
-        <td (click)="navigateToDetails(m.id)" id="movieTitle">{{ (m.movieTitle.length>25)? (m.movieTitle | slice:0:25)+'...':(m.movieTitle) }}</td>
+        <td (click)="navigateToDetails(m.id)" id="movieTitle" class="text-left">{{ (m.movieTitle.length>25)? (m.movieTitle | slice:0:25)+'...':(m.movieTitle) }}</td>
         <td>{{m.genre}}</td>
         <td>{{m.year}}</td>
         <td>{{m.time}}</td>
@@ -46,5 +46,6 @@
         </td>
     </tr>
 </table>
+<pagination-controls (pageChange)="p = $event" class="text-center"></pagination-controls>
 </div>
 <ngb-alert *ngIf="successMessage" type="danger" class="text-center"  >{{ successMessage }}</ngb-alert>
