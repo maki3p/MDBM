@@ -21,3 +21,19 @@ h1{
   .light-blue-backdrop {
     background-color: #5cb3fd;
   }
+  #movieTable{
+    margin-left: 5%;
+    margin-right: 5%;
+    
+  }
+  th{
+      cursor: pointer;
+  }
+  #table2{
+    border: 3px;
+    border-color: black;
+    border-style: solid;
+    margin-bottom: 2%;
+    margin-top: 2%;
+    border-radius: 10px;
+  }
