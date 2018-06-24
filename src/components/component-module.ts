@@ -6,11 +6,14 @@ import { WelcomeComponent} from "./welcome";
 import { MovieService } from "../services/movie.service";
 import {MovieLibaryComponent } from "./movie-libary";
 import { MovieDetailsComoponent} from "./movie-details";
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule,} from '@angular/material';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { Ng2OrderModule } from 'ng2-order-pipe'; //importing the module
 import {NgxPaginationModule} from 'ngx-pagination';
+import { NguCarouselModule } from '@ngu/carousel';
+
+
 
 
 @NgModule({
@@ -32,7 +35,9 @@ import {NgxPaginationModule} from 'ngx-pagination';
     NgbModule.forRoot(),
     Ng2SearchPipeModule,
     Ng2OrderModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    NguCarouselModule,
+    
     
   ],
   exports: [
