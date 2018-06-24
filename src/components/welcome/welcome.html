@@ -13,7 +13,7 @@
 <div id="carouselOne" >
 <ngu-carousel [inputs]="carouselOne" >
           <ngu-item NguCarouselItem *ngFor="let m of movieList" >
-                <img src="{{m.coverUrl}}" alt="" (click)="navigateToDetails(m.id)" id="img" onError="this.src='https://kavtown.mk/wp-content/uploads/2018/02/mesto-za-vasata-reklama-300x450.png';">
+                <img src="{{m.coverUrl}}" alt="" (click)="navigateToDetails(m.id)" id="img" onError="this.src='https://elitescreens.com/images/product_album/no_image.png';">
           </ngu-item>
           <button NguCarouselPrev class='leftRs' hidden>&lt;</button>
           <button NguCarouselNext class='rightRs' hidden>&gt;</button>
