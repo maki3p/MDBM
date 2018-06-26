@@ -49,6 +49,11 @@ export class WelcomeComponent implements OnInit {
           }
           
     }
-
+    radnomID(){
+   
+        var randomMovie2 = this.movieList[Math.floor(Math.random()* this.movieList.length)].id
+       
+         this.router.navigate(["movie-details", randomMovie2]);
+   }
       
 }
