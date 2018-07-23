@@ -36,7 +36,7 @@ export class WelcomeComponent implements OnInit {
         this.carouselOne = {
             grid: {xs: 10, sm: 10, md: 10, lg: 10, all: 0},
             slide: 1,
-            speed: 1000,
+            speed: 100,
             interval: 1000,
             point: {
               visible: false
@@ -49,6 +49,7 @@ export class WelcomeComponent implements OnInit {
           }
           
     }
+    
     radnomID(){
    
         var randomMovie2 = this.movieList[Math.floor(Math.random()* this.movieList.length)].id
